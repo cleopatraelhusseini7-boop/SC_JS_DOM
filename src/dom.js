@@ -3,17 +3,23 @@
     The 'document' keyword opens up the entire tree. We can reach the body instantly.
     Note the camelCase spelling differences on the Style Object (eg: backgroundColor vs background-color)
 */
+document.body.style.backgroundColor="lightyellow";
 
 
-
-
+let username = prompt("Give me your name,please");
+username = username.toUpperCase();
 // TASK 2: SELECTING AND STYLING BY ID
 // getElementById strictly targets a unique ID string (No hashtag required!)
+document.getElementById("main-heading");
+const heading = document.getElementById("main-heading");
+heading.innerText = "Welcome T4G Cohort 5 to DOM Control";
 
-
+//we have changed the inner text of that element
+heading.innerText = `Welcome ${username}`;
 
 // Modifying Content
 
+heading.style.fontFamily = "Times New Roman"
 
 // Modifying Style via ID Selectors
 
@@ -26,10 +32,14 @@
 */
 
 // Styling a class using querySelector
-
+const badge = document.querySelector(".badge");
+badge.style.backgroundColor = "purple";
+badge.style.color = "white";
 
 // Altering text of an ID using querySelector
-
+const status = document.querySelector("#status-text");
+status.innerText = `Success:Connection established by ${username}!`;
+status.style.FontWeight = "Bold"
 
 
 // TASK 4: TARGETING MULTIPLE ELEMENTS (OPTIONAL)
@@ -44,8 +54,8 @@
     .innerText only treats text as a literal string. 
     .innerHTML lets you inject raw HTML formatting tags right through your JavaScript.
 */
-
-
+const description = document.querySelector(".description");
+description.innerHTML = "Account Status:<b><u>Suspended</u> </b>";
 
 // TASK 6: MANIPULATING CLASSES WITH .CLASSLIST
 /*
@@ -55,7 +65,8 @@
     A better way is to write the styling rule in CSS, and use .classList.add() to apply it.
     Note: For this to work, ensure you add '.alert-mode { border: 3px solid red; }' to your style.css file!
 */
-
+const cardContainer = document.querySelector(".card-container");
+cardContainer.classList.add("alert-mode");
 
 
 // TASK 7: DOM NODE TRAVERSAL (.PARENTELEMENT)
